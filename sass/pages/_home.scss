@@ -1,0 +1,125 @@
+.container {
+    *,
+    *::after,
+    *::before {
+        margin: 0;
+        padding: 0px;
+        box-sizing: inherit;
+    }
+
+    // height: 1000px;
+
+    height: 60rem;
+    // background-image: linear-gradient(to right, #0F2027 , #2C5364);
+    background-image: linear-gradient(to right, #0C121A , #0E151D);
+    padding: 1rem 2rem;
+    
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+
+        .header__logo {
+            img {
+                height: 5rem;
+                width: auto;
+            }
+        }
+
+        .header__navigation {
+            font-size: 1.5rem;
+            ul {
+                list-style: none; 
+                margin: 0; 
+                padding: 0;
+                display: flex;
+
+                li {
+                    margin: 0 2rem;
+                    // width: 3rem;
+
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        width: 3rem;
+                    }
+                }
+
+                li:hover {
+                    a {
+                      color: #FA6665;
+                    }
+                }
+            }
+        }
+
+        .header__action {
+            text-align: center;
+            width: 11rem;
+        }
+    }
+
+    &__section-banner {
+        margin-top: 4rem;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+
+        .section-left {
+            padding: 6rem 0rem 0rem 7.5rem;
+            width: 50%;
+            font-weight: bold;
+            // text-align: center;
+            // margin: 0 auto;
+
+            .text__title {
+                font-size: 4rem;
+                line-height: 1.2;
+                letter-spacing: 0.3rem;
+            }
+
+            .text-color--orange {
+              color: #FA6665;
+            }
+
+            .text__info {
+                margin-top: 2rem;
+                color: grey;
+                width: 65%;
+                font-size: 1rem;
+            }
+
+            &__btn-profile {
+                display: inline-block;
+                // justify-content: flex-start;
+                padding-top: 3rem;
+                margin: 0 auto;
+                width: 15rem
+            }
+        }
+
+        .section-right {
+            width: 50%;
+
+            .image-cover {
+                margin-top: -5rem;
+                background-image:url(../public/person1.png);
+                background-size: cover;
+                height: 50rem;
+                width: auto;
+            }
+
+            .image-cover-homepage {
+              margin-top: -5rem;
+              background-image:url(../public/person1.png);
+              background-size: cover;
+              height: 50rem;
+              width: auto;
+            }
+        }
+    }
+
+    // margin: 0 auto;
+    // padding: 20px 20px 20px 20px;
+}

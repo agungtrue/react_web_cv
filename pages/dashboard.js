@@ -4,28 +4,27 @@ import Router, { useRouter } from "next/router"
 import localStorage from 'local-storage'
 import Link from 'next/link';
 
-const App = (props) => {
+const Home = (props) => {
     console.log('props', props)
     const token = localStorage.get('token')
 
-    // const logOut = () => {
-    //     localStorage.remove('token')
-    //     typeof window !== 'undefined' && window.location.href ? window.location.href = `/login` : false;
-    // }
+    const logOut = () => {
+        localStorage.remove('token')
+        typeof window !== 'undefined' && window.location.href ? window.location.href = `/login` : false;
+    }
 
     if(!token) {
-        // logOut()
-        console.log('auth 401')
+        logOut()
     } 
 
-    // if(!token && token === null) {
-    //     return (
-    //         <div className="container">
-    //             <h2></h2>
-    //         </div>
-    //     )
-    // }
-    // else {
+    if(!token && token === null) {
+        return (
+            <div className="container">
+                <h2></h2>
+            </div>
+        )
+    }
+    else {
         return (
             <div className="container">
                 <div className="container__header">
@@ -33,13 +32,22 @@ const App = (props) => {
                         <img src="/React_Logo.png" />
                     </div>
                     <div className="header__navigation">
-                        
+                        <ul>
+                          <li>
+                              <Link href="/dashboard">
+                                  <a>Home</a>
+                              </Link>
+                          </li>
+                          <li>
+                              <Link href="/profile">
+                                  <a>Profile</a>
+                              </Link>
+                          </li>
+                        </ul>
                     </div>
                     <div className="header__action">
-                        <div className="card-box__button">
-                              <Link href="/login">
-                                  <a href="#" className={`btn btn--orange`}> Log In </a>
-                              </Link>
+                        <div className="card-box__button" onClick={logOut}>
+                            <a href="#" className={`btn btn--orange`}> LOGOUT </a>
                         </div>
                     </div>
                 </div>
@@ -55,11 +63,15 @@ const App = (props) => {
                             obcaecati id suscipit, error facere nostrum nihil!
                         </p>
                         <div className="section-left__btn-profile">
-                           
+                            <div className="card-box__button">
+                                <Link href="/profile">
+                                    <a href="#" className={`btn btn--orange`}> Profile </a>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                     <div className="section-right">
-                        <div className="image-cover-homepage"></div>
+                        <div className="image-cover"></div>
                     </div>
                 </div>
 
@@ -68,7 +80,7 @@ const App = (props) => {
                 </div>
             </div>
         )
-    // }
+    }
 }
 
 export async function getStaticProps() {
@@ -83,4 +95,4 @@ export async function getStaticProps() {
     }
 }
 
-export default App
+export default Home

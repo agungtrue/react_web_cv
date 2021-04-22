@@ -1,0 +1,64 @@
+.container-login {
+    height: 60rem;
+    // background-color: $color-bg-login;
+    // background-image: linear-gradient(to right, #0C121A , #0E151D);
+    background-image: linear-gradient(to right, #0C121A , #C5796D);
+
+    padding: 100px 20px 20px 20px;
+
+    .card-box {
+        background-color: whitesmoke;
+        max-width: 115rem;
+        border-radius: 1rem;
+        box-shadow: 0 2rem 4rem rgba($color-bg-login, .15);
+        overflow: hidden;
+        height: 25rem;
+        transition: all .8s ease;
+        // position: absolute;
+        width: 30%;
+        backface-visibility: hidden;
+        margin: 0 auto;
+
+        &__content {
+            padding: 1rem 0rem 1rem 0rem;
+
+            height: 100%;
+            
+            h2 {
+                text-align: center;
+            }
+
+            .text__title {
+                padding-left: 10px;
+            }
+
+            .text__data {
+                margin: 0 auto;
+                width: 70%;
+
+                input {
+                    margin: 10px 0px 10px 0px;
+                }
+            }
+        }
+
+        &__button {
+            padding: 10px 10px 10px 10px;
+            text-align: center;
+        }
+
+        &__loading {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        &__logo {
+            text-align: center;
+            img {
+                height: 5rem;
+                width: auto;
+            }
+        }
+        
+    }
+}
