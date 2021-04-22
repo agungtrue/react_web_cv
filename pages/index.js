@@ -46,11 +46,11 @@ const App = (props) => {
 
                 <div className="container__section-banner">
                     <div className="section-left">
-                        <p className="text__title">Belajar jadi lebih <br />  
-                            <span className="text-color--orange">mudah </span> 
-                            dan asik
+                        <p className="text__title"> Hi There, <br />  
+                            <span className="text-color--orange">Log In </span> 
+                            and enjoy!
                         </p>
-                        <p className="text__info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae cumque dolores laudantium 
+                        <p className="text__info">Login, Email : stefani@test.com, password: pass12345  
                             nemo alias, quis voluptatibus dolorem ducimus illum hic eaque accusantium autem, 
                             obcaecati id suscipit, error facere nostrum nihil!
                         </p>
