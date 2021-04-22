@@ -38,7 +38,7 @@
         width: auto; }
 
 .container {
-  height: 60rem;
+  min-height: 60rem;
   background-image: linear-gradient(to right, #0C121A, #0E151D);
   padding: 1rem 2rem; }
   .container *,

@@ -55,7 +55,7 @@ const Profile = (props) => {
                 <div className="container__section-banner">
                     <div className="section-left">
                         <p className="text__title">Syuhada Dwi Agung <br />  
-                            <span className="text-color--orange">profile </span> 
+                            <span className="text-color--orange">Profile </span> 
                             
                         </p>
                         <p className="text__info_profile">
