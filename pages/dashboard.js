@@ -3,10 +3,41 @@ import Head from 'next/head'
 import Router, { useRouter } from "next/router"
 import localStorage from 'local-storage'
 import Link from 'next/link';
+import Axios from 'axios';
 
 const Home = (props) => {
     console.log('props', props)
     const token = localStorage.get('token')
+    const [userLogin, setUserLogin] = useState({})
+
+    useEffect(() => {
+        getUserLogin()
+    }, [])
+
+    // const handleSetState = data => setUserLogin({ ...stateData, ...data })
+
+    const getUserLogin = async () => {
+        const API_URL = "https://polar-bastion-55096.herokuapp.com";
+        let getUserLogin;
+
+        try {
+            getUserLogin = await Axios.get(`${API_URL}/api/v1/users/me`, {
+                headers: { 'Authorization': 'Bearer ' + token}
+            });
+
+            if(getUserLogin.data && getUserLogin.data.status === 'success') {
+                setUserLogin(prev => ({
+                  ...prev,
+                  ...getUserLogin.data.data.tour
+                }))
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+
+        console.log('userLogin', userLogin)
+    }
 
     const logOut = () => {
         localStorage.remove('token')
@@ -54,7 +85,7 @@ const Home = (props) => {
 
                 <div className="container__section-banner">
                     <div className="section-left">
-                        <p className="text__title"> Hi There, <br />  
+                        <p className="text__title"> Hi <span className="text-color--orange">{userLogin.name ? userLogin.name.toUpperCase() : 'Bro'}</span>, <br />  
                             <span className="text-color--orange">Welcome </span> 
                             and enjoy!
                         </p>
@@ -84,13 +115,11 @@ const Home = (props) => {
 }
 
 export async function getStaticProps() {
-    // Call an external API endpoint to get posts
-    // const res = await fetch('https://.../posts')
-    // const posts = await res.json()
+    // Call an external API endpoint to get data
 
     return { 
         props: {
-            page: "dashboard"
+            page: "dashboard",
         }
     }
 }
