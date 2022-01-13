@@ -16,7 +16,7 @@
     .container-login .card-box__content {
       padding: 1rem 0rem 1rem 0rem;
       height: 100%; }
-      .container-login .card-box__content h2 {
+      .container-login .card-box__content h2, .container-login .card-box__content p {
         text-align: center; }
       .container-login .card-box__content .text__title {
         padding-left: 10px; }

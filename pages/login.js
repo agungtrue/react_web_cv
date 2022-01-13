@@ -107,13 +107,14 @@ const Login = (props) => {
                   <div className="card-box__logo">
                       <img src={"/React_Logo.png"} />
                   </div>
-                  <h2>Welcome</h2>
+                  <h2>Welcome </h2>
+                  <p>fill username and password, anything you want</p>
                   <div className="text__data">
                       <Input 
                           name="email"
                           onChange={e => handleFormChange(e) }
                           onKeyPress={(e) => e.key === 'Enter' && actionLogin()}
-                          placeholder="Type your Email" 
+                          placeholder="Type your Username" 
                       />
                   </div>
                   <div className="text__data">

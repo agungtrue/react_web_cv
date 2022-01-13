@@ -14,61 +14,51 @@ const App = (props) => {
     // }
 
     if(!token) {
-        // logOut()
         console.log('auth 401')
     } 
 
-    // if(!token && token === null) {
-    //     return (
-    //         <div className="container">
-    //             <h2></h2>
-    //         </div>
-    //     )
-    // }
-    // else {
-        return (
-            <div className="container">
-                <div className="container__header">
-                    <div className="header__logo">
-                        <img src="/React_Logo.png" />
-                    </div>
-                    <div className="header__navigation">
-                        
-                    </div>
-                    <div className="header__action">
-                        <div className="card-box__button">
-                              <Link href="/login">
-                                  <a href="#" className={`btn btn--orange`}> Log In </a>
-                              </Link>
-                        </div>
-                    </div>
+    return (
+        <div className="container">
+            <div className="container__header">
+                <div className="header__logo">
+                    <img src="/React_Logo.png" />
                 </div>
-
-                <div className="container__section-banner">
-                    <div className="section-left">
-                        <p className="text__title"> Hi There, <br />  
-                            <span className="text-color--orange">Log In </span> 
-                            and enjoy!
-                        </p>
-                        <p className="text__info">Login, Email : stefani@test.com, password: pass12345  
-                            nemo alias, quis voluptatibus dolorem ducimus illum hic eaque accusantium autem, 
-                            obcaecati id suscipit, error facere nostrum nihil!
-                        </p>
-                        <div className="section-left__btn-profile">
-                           
-                        </div>
-                    </div>
-                    <div className="section-right">
-                        <div className="image-cover-homepage"></div>
-                    </div>
+                <div className="header__navigation">
+                    
                 </div>
-
-                <div className="container__section-footer">
-
+                <div className="header__action">
+                    <div className="card-box__button">
+                            <Link href="/login">
+                                <a href="#" className={`btn btn--orange`}> Log In </a>
+                            </Link>
+                    </div>
                 </div>
             </div>
-        )
-    // }
+
+            <div className="container__section-banner">
+                <div className="section-left">
+                    <p className="text__title"> Hi There, <br />  
+                        <span className="text-color--orange">Log In </span> 
+                        and enjoy!
+                    </p>
+                    <p className="text__info">  
+                        nemo alias, quis voluptatibus dolorem ducimus illum hic eaque accusantium autem, 
+                        obcaecati id suscipit, error facere nostrum nihil!
+                    </p>
+                    <div className="section-left__btn-profile">
+                        
+                    </div>
+                </div>
+                <div className="section-right">
+                    <div className="image-cover-homepage"></div>
+                </div>
+            </div>
+
+            <div className="container__section-footer">
+
+            </div>
+        </div>
+    )
 }
 
 export async function getStaticProps() {
