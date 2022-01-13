@@ -11,7 +11,7 @@ const Home = (props) => {
     const [userLogin, setUserLogin] = useState({})
 
     useEffect(() => {
-        getUserLogin()
+        // getUserLogin()
     }, [])
 
     // const handleSetState = data => setUserLogin({ ...stateData, ...data })

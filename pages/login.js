@@ -4,6 +4,7 @@ import axios from "axios"
 import Router from "next/router"
 import { Input, Tooltip, Button, Spin, notification } from 'antd';
 import localStorage from 'local-storage'
+import { login as responseLogin } from './api/mock/login';
 
 const Login = (props) => {
 
@@ -22,7 +23,6 @@ const Login = (props) => {
 
   const handleFormChange = (e) => {
       let { name, value } = e.target
-      console.log('dataForm', dataForm)
 
       setDataForm(prev => ({
           ...prev,
@@ -45,14 +45,16 @@ const Login = (props) => {
           buttonText: 'logged in...'
       }))
 
-      console.log('actionLogin', dataForm)
       const API_URL = "https://polar-bastion-55096.herokuapp.com";
       const payload = dataForm;
 
       try {
-          let response = await axios.post(`${API_URL}/auth/v1/users/login`, payload)
-          console.log('response', response)
-    
+        //   let response = await axios.post(`${API_URL}/auth/v1/users/login`, payload)
+        //   console.log('response', response)
+
+          const response = responseLogin;
+          console.info('response', response)
+
           if(response.data && response.data.status == "success") {
               setLoading(false)
               setClassLoading(prev => ({
